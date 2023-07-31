@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Log in</title>
+    <title>Hello World Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -39,8 +37,7 @@
             margin-bottom: 5px;
         }
 
-        input[type="text"],
-        input[type="password"] {
+        input[type="text"] {
             width: 100%;
             padding: 10px;
             border-radius: 4px;
@@ -73,50 +70,48 @@
         }
     </style>
 </head>
-
 <body>
     <div class="container">
-        <h2>Log in</h2>
-        <form action="login_process.php" method="post" onsubmit="return validateForm()">
+        <h2>Enter personal information</h2>
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" onsubmit="return validateForm()">
             <div class="form-group">
-                <label for="username">Log in name:</label>
-                <input type="text" id="username" name="username" required>
-                <span id="username-error" class="error-message"></span>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <span id="name-error" class="error-message"></span>
             </div>
+
             <div class="form-group">
-                <label for="password">password:</label>
-                <input type="password" id="password" name="password" required>
-                <span id="password-error" class="error-message"></span>
+                <label for="hobby">Favorite:</label>
+                <input type="text" id="hobby" name="hobby" required>
+                <span id="hobby-error" class="error-message"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="password">
-            </div>
+
+            <input type="submit" value="Send">
         </form>
     </div>
 
     <script>
         function validateForm() {
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
+            var name = document.getElementById("name").value;
+            var hobby = document.getElementById("hobby").value;
             var valid = true;
 
-            if (username.trim() === "") {
-                document.getElementById("username-error").innerText = "Please enter your username.";
+            if (name.trim() === "") {
+                document.getElementById("name-error").innerText = "Please enter your name.";
                 valid = false;
             } else {
-                document.getElementById("username-error").innerText = "";
+                document.getElementById("name-error").innerText = "";
             }
 
-            if (password.trim() === "") {
-                document.getElementById("password-error").innerText = "Please enter a password.";
+            if (hobby.trim() === "") {
+                document.getElementById("hobby-error").innerText = "Please enter preferences.";
                 valid = false;
             } else {
-                document.getElementById("password-error").innerText = "";
+                document.getElementById("hobby-error").innerText = "";
             }
 
             return valid;
         }
     </script>
 </body>
-
 </html>
