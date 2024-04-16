@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.LoginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/background1"
+            android:layout_width="wrap_content"
+            android:layout_height="273dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/background1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="#652FD5"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/background1">
+
+                <!--            <TextView-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:text="@string/Login_lable"-->
+                <!--                android:gravity="center"-->
+                <!--                android:layout_marginTop="@dimen/sp_16"-->
+                <!--                android:textSize="@dimen/sp_24"-->
+                <!--                android:textStyle="bold" />-->
+
+                <TextView
+                    android:id="@+id/lable_Login"
+                    style="@style/lwMatch_lhWrap"
+                    android:layout_marginStart="@dimen/sp_20"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="Email"
+                    android:textSize="@dimen/sp_20"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/register_editEmail"
+                    style="@style/MgStaEnd20Top10"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/text_edit"
+                    android:ems="10"
+                    android:hint="@string/Email_Input"
+                    android:inputType="textEmailAddress"
+                    android:padding="@dimen/dp_8"
+                    android:textSize="@dimen/sp_16" />
+
+                <TextView
+                    android:id="@+id/lable_Password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sp_20"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="Password"
+                    android:textSize="@dimen/sp_20"
+                    android:textStyle="bold" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10">
+
+                    <EditText
+                        android:id="@+id/register_editPass"
+                        style="@style/MgStaEnd20"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/text_edit"
+                        android:drawableRight="@drawable/hide_password"
+                        android:ems="10"
+                        android:hint="@string/Password_Input"
+                        android:inputType="textPassword"
+                        android:padding="@dimen/dp_8"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/lable_ConfirmPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sp_20"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="Confirm password"
+                    android:textSize="@dimen/sp_20"
+                    android:textStyle="bold" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10">
+
+                    <EditText
+                        android:id="@+id/register_editConfirmPass"
+                        style="@style/MgStaEnd20"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/text_edit"
+                        android:drawableRight="@drawable/hide_password"
+                        android:ems="10"
+                        android:hint="Confirm password"
+                        android:inputType="textPassword"
+                        android:padding="@dimen/dp_8"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_Register"
+                    style="@style/MgStaTopEnd20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_btn_light"
+                    android:text="Login"
+                    android:textAllCaps="false"
+
+                    android:textSize="@dimen/sp_18" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_Login"
+                    style="@style/MgStaTopEnd20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_btn_bold"
+                    android:text="Already have an account? Log in"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/sp_18" />
+            </LinearLayout>
+
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
